@@ -1,5 +1,5 @@
 {
-  "name": "food-ordering-api",
+  "name": "student-event-management",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,9 +14,9 @@
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/navobogoda/Food-Ordering-API/issues"
+    "url": "https://github.com/navobogoda/Student-Event-Management/issues"
   },
-  "homepage": "https://github.com/navobogoda/Food-Ordering-API#readme",
+  "homepage": "https://github.com/navobogoda/Student-Event-Management#readme",
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
