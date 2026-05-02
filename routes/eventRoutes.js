@@ -3,4 +3,4 @@ const router = express.Router();
 
 router.post("/",createEvent);
 
-export default router;
+module.exports = router;
