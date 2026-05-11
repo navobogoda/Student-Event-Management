@@ -1,8 +1,14 @@
 import mongoose from "mongoose";
 
 const registrationSchema = new mongoose.Schema({
-  userId: String,
-  eventId: String,
+  userId: {
+    type: String,
+    required: true
+  },
+  eventId: {
+    type: String,
+    required: true
+  },
   status: {
     type: String,
     default: "registered"

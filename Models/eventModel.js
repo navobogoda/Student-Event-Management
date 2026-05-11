@@ -1,10 +1,22 @@
 import mongoose from "mongoose";
 
 const eventSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  date: Date,
-  location: String
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    required: true
+  },
+  location: {
+    type: String,
+    required: true
+  }
 });
 
 const Event = mongoose.model("Event", eventSchema);
