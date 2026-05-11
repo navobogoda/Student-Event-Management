@@ -1,23 +1,44 @@
-const Event = require("../models/Event");
+import Event from "../models/eventModel.js";
 
-exports.createEvent = async (req, res) => {
-  const event = await Event.create(req.body);
-  res.json(event);
+
+export const createEvent = async (req, res) => {
+  try {
+    const event = await Event.create(req.body);
+    res.json(event);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.getEvents = async (req, res) => {
-  const events = await Event.find();
-  res.json(events);
+export const getEvents = async (req, res) => {
+  try {
+    const events = await Event.find();
+    res.json(events);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
+export const updateEvent = async (req, res) => {
+  try {
+    const event = await Event.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
 
-exports.updateEvent = async (req, res) => {
-  const event = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  res.json(event);
+    res.json(event);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
+export const deleteEvent = async (req, res) => {
+  try {
+    await Event.findByIdAndDelete(req.params.id);
 
-exports.deleteEvent = async (req, res) => {
-  await Event.findByIdAndDelete(req.params.id);
-  res.json({ message: "Deleted" });
+    res.json({ message: "Deleted Successfully" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
