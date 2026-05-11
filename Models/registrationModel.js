@@ -1,9 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const registrationSchema = new mongoose.Schema({
   userId: String,
   eventId: String,
-  status: { type: String, default: "registered" }
+  status: {
+    type: String,
+    default: "registered"
+  }
 });
 
-module.exports = mongoose.model("Registration", registrationSchema);
+const Registration = mongoose.model("Registration", registrationSchema);
+
+export default Registration;

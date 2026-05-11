@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import eventRoutes from "./routes/eventRoutes.js";
+import registrationRoutes from "./routes/registrationRoutes.js";
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/events", eventRoutes);
+
+app.use("/api/registrations", registrationRoutes);
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

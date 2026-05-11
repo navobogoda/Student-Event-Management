@@ -1,10 +1,15 @@
-const express = require("express");
+import express from "express";
+
+import {
+  registerEvent,
+  getRegistrations,
+  deleteRegistration
+} from "../controllers/registrationController.js";
+
 const router = express.Router();
-const ctrl = require("../controllers/registrationController");
 
-router.post("/", ctrl.registerEvent);
-router.get("/", ctrl.getRegistrations);
-router.delete("/:id", ctrl.deleteRegistration);
+router.post("/", registerEvent);
+router.get("/", getRegistrations);
+router.delete("/:id", deleteRegistration);
 
-
-module.exports = router;
+export default router;
