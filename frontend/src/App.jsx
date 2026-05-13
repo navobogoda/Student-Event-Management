@@ -143,9 +143,7 @@ function App() {
   return (
     <div className="container">
       <h1>Student Event Management System</h1>
-      <p className="subtitle">
-        Manage university events, students, and event registrations
-      </p>
+      
 
       <div className="grid">
         <div className="card">
