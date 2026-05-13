@@ -22,7 +22,7 @@ export const deleteRegistration = async (req, res) => {
   try {
     await Registration.findByIdAndDelete(req.params.id);
 
-    res.json({ message: "Registration cancelled" });
+    res.json({ message: "Registration cancelled Successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
